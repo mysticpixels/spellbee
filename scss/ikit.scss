@@ -1,0 +1,69 @@
+/*==============================================
+=            Interviewers kit rules            =
+==============================================*/
+body{
+	font-family: 'arial';
+}
+dl{
+	dt, dd{
+		float: left;
+	}
+	dt{
+		width: 300px;
+		height: 300px;
+		// background-repeat: no-repeat;
+		// background-position: center  center;
+		// background-size: cover;
+		img{
+			width: 100%;
+		}
+		&.one{
+			// background-image: url(../images/diya.jpg);
+		}
+	}
+	dd{
+		#keyedStringDisplay{
+			text-transform: uppercase;
+		}
+		ul, li{
+			list-style: none;
+			list-style-type: none;
+		}
+		ul{
+			margin: 0 10px 0 0;
+			padding: 0;
+			width: 300px;
+			height: 300px;
+			// background-color: red;
+			li{
+					float: left;
+					display: block;
+					margin-right: 10px;
+					margin-bottom: 10px;					
+				a{
+					display: block;
+					text-align: center;
+					line-height: 50px;
+					vertical-align: middle;
+					width: 50px;
+					height: 50px;
+					background-color: #ccc;
+					text-decoration: none;
+					text-transform: uppercase;
+					&:hover{
+						background-color: #eee;
+					}
+				}
+				&.active{
+					a{
+						background-color: green;
+						color: #fff;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+/*=====  End of Interviewers kit rules  ======*/
