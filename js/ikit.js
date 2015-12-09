@@ -146,7 +146,7 @@ var theGame = {
 		theGame.status=0; //todo: no need to set it at the first load
 
 		// populate the image
-		theGame.populateImage();
+		// theGame.populateImage();
 
 		// populating the keyboard
 		theGame.populateKeyBoard();
