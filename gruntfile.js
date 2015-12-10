@@ -81,11 +81,25 @@ module.exports = function(grunt) {
       }
     },
 
+    // modernizr
+    modernizr: {
+      dist:{
+        'dest': '<%= project.devjs %>/modernizr.js',
+        "options" : [
+          "setClasses",
+          "addTest",
+          "html5printshiv",
+          "testProp",
+          "fnBind"
+        ]
+      }
+    },
+
     // copying files to build system
     sync: {
       main: {
         files: [
-          {cwd: '<%= project.dev %>', src: '*.html', dest: '<%= project.build %>/'},
+          {cwd: '<%= project.dev %>/', src: '*.html', dest: '<%= project.build %>/'},
         ],
         verbose: 'true',
         // updateAndDelete: 'true'
@@ -113,10 +127,11 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-watch');
-    grunt.loadNpmTasks('grunt-sync');
+  grunt.loadNpmTasks('grunt-sync');
+  grunt.loadNpmTasks('grunt-modernizr');
   grunt.loadNpmTasks('grunt-banner');
 
   // registering the tasks
-  grunt.registerTask('default', ['concat', 'sass', 'uglify', 'sync', 'watch'  ]);
+  grunt.registerTask('default', ['concat', 'sass', 'uglify', 'modernizr', 'sync', 'watch'  ]);
 
 };
