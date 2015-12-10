@@ -6,7 +6,7 @@
 var theGame = {
 
 	// array of url and name of the pic to match
-	names : [ 'diya', 'rocket', 'monkey', 'apple', 'orange', 'car', 'school', 'police', 'tree', 'cow'],
+	names : [ 'diya', 'rocket', 'monkey', 'apple', 'orange', 'car', 'school', 'police', 'tree', 'cow' ],
 
 	// task status number
 	status : 0,
@@ -119,7 +119,7 @@ var theGame = {
 		}
 	},
 
-	//clearing the header display of keyed in alphabets
+	/*----------  clearing the header display  ----------*/
 	clearDisplay : function(e){
 		theGame.keyedStringDisplay.innerHTML="";
 	},
