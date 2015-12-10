@@ -34,9 +34,8 @@ var theGame = {
 	// the ul element of keyboard
 	keyBoardUL : document.getElementById("keyBoardUL"),
 
-	/*----------  methods  ----------*/
 
-	// method to reset the keyboard
+	/*----------   method to reset the keyboard  ----------*/
 	reset : function(){
 
 		//  removing classname 'active' from all li tags of keyboard
@@ -46,7 +45,7 @@ var theGame = {
 		theGame.keyedStringDisplay.innerHTML="";
 	},
 
-	// next image detail loaded
+	/*----------   next image detail loaded  ----------*/
 	next : function(){
 		if(theGame.status<theGame.names.length-1){
 			var imgSrc="images/"+theGame.names[theGame.status+1]+".jpg";
@@ -59,7 +58,8 @@ var theGame = {
 		return;
 	},
 
-	// populating the keyboard keys with random alphabets
+	/*----------   populating the keyboard keys with random alphabets  ----------*/
+
 	// todo: add the first image also on first load ... rt now its hard coded in the markup
 	populateKeyBoard : function(e){
 		var i, j, k, temp, ambiguity,
@@ -106,7 +106,7 @@ var theGame = {
 		}
 	},
 
-	// clear all keyboard markup
+	/*----------  clear all keyboard markup  ----------*/
 	clearKeyboard : function(e){
 
 		// storing the total number of keys in the current keyboard
@@ -124,7 +124,7 @@ var theGame = {
 		theGame.keyedStringDisplay.innerHTML="";
 	},
 
-	// all the action that happens while the keys are pressed in the keyboard
+	/*----------  all the action that happens while the keys are pressed in the keyboard  ----------*/
 	keyIn : function(e){
 		var eventName=e;
 
@@ -139,7 +139,7 @@ var theGame = {
 		}
 	},
 
-	// the start of all fun ;)
+	/*----------  the start of all fun ;)  ----------*/
 	startUp : function(e){
 
 		//loading the picture and setting the count
