@@ -96,15 +96,15 @@ module.exports = function(grunt) {
     },
 
     // copying files to build system
-    sync: {
-      main: {
-        files: [
-          {cwd: '<%= project.dev %>/', src: '*.html', dest: '<%= project.build %>/'},
-        ],
-        verbose: 'true',
-        // updateAndDelete: 'true'
-      }
-    },
+    // sync: {
+    //   main: {
+    //     files: [
+    //       {cwd: '<%= project.dev %>/', src: '*.html', dest: '<%= project.build %>/'},
+    //     ],
+    //     verbose: 'true',
+    //     // updateAndDelete: 'true'
+    //   }
+    // },
 
     // watching the scss files
     watch: {
@@ -117,7 +117,7 @@ module.exports = function(grunt) {
       },
       html: {
         files: ['<%= project.dev %>/*.html'],
-        tasks: ['sync']
+        // tasks: ['sync']
       }
     }
   });

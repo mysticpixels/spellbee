@@ -14,6 +14,9 @@ var theGame = {
 	// keystroke order array
 	keyStrokeOrder : [],
 
+	// keyedin string per session
+	keyedInString : "",
+
 	/*----------  DOM object initialisations  ----------*/
 
 	// pic which is to be spelled
@@ -28,6 +31,9 @@ var theGame = {
 	// next link	
 	nextLink : document.getElementById("next"),
 
+	// submit action button
+	submitAction : document.getElementById("submitAction"),
+
 	// keyedin string display header
 	keyedStringDisplay : document.getElementById("keyedStringDisplay"),
 
@@ -37,6 +43,9 @@ var theGame = {
 
 	/*----------   method to reset the keyboard  ----------*/
 	reset : function(){
+
+		theGame.keyStrokeOrder=[];
+		theGame.keyedInString="";
 
 		//  removing classname 'active' from all li tags of keyboard
 		for(var i=0;i<keyBoard.querySelectorAll('a').length;i++){
@@ -48,15 +57,29 @@ var theGame = {
 	/*----------   next image detail loaded  ----------*/
 	next : function(){
 		if(theGame.status<theGame.names.length-1){
+			console.log(theGame.keyedInString);
+			theGame.keyStrokeOrder=[];
+			theGame.keyedInString="";
 			var imgSrc="images/"+theGame.names[theGame.status+1]+".jpg";
 			theGame.status++;
-			theGame.pic.setAttribute('src', imgSrc);	
+			theGame.pic.querySelectorAll('img')[0].setAttribute('src', imgSrc);	
 			theGame.clearKeyboard();
 			theGame.clearDisplay();
 			theGame.populateKeyBoard();
 		}
 		return;
 	},
+
+	/*----------  submitting the spelling of the object  ----------*/
+	submitSpelling : function(){
+
+		console.log(theGame.keyedInString);
+		if (theGame.keyedInString == theGame.names[theGame.status])
+			console.log('Success');
+		else
+			console.log('try again another time');
+	},
+	
 
 	/*----------  populating the first image  ----------*/
 	populateImage : function(){
@@ -137,8 +160,9 @@ var theGame = {
 		var eventName=e;
 
 		// recording the key press order in the array object keyStrokeOrder
-		theGame.keyStrokeOrder.push(e.currentTarget.parentNode.id);
-		// console.log('pushed');
+		theGame.keyStrokeOrder.push(e.currentTarget.parentNode.children[0].innerHTML);
+		theGame.keyedInString=theGame.keyStrokeOrder.join('');
+		// console.log(theGame.keyStrokeOrder.join(''));
 		
 		// in case the key is a fresh press
 		if(e.currentTarget.parentNode.className!='active'){
@@ -168,7 +192,11 @@ var theGame = {
 		theGame.resetLink.addEventListener('click', theGame.reset, 'false');
 
 		//attaching listener to next link
-		next.addEventListener('click', theGame.next, 'false');
+		theGame.nextLink.addEventListener('click', theGame.next, 'false');
+
+		//attaching listener to submit button
+		theGame.submitAction.addEventListener('click', theGame.submitSpelling, 'false');
+
 	}
 }
 

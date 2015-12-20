@@ -3,6 +3,7 @@
 ==============================================*/
 body {
   font-family: 'arial';
+  background: url(../../images/swirl_pattern.png) 0 0 repeat;
 }
 
 dl dt, dl dd {
