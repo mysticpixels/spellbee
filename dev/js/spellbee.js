@@ -17,7 +17,7 @@ var theGame = {
 	/*----------  DOM object initialisations  ----------*/
 
 	// pic which is to be spelled
-	pic : document.getElementById("objectToSpell").querySelectorAll('img')[0],
+	pic : document.getElementById("objectToSpell"),
 
 	// keyboard
 	keyBoard : document.getElementById("keyBoard"),
@@ -56,6 +56,14 @@ var theGame = {
 			theGame.populateKeyBoard();
 		}
 		return;
+	},
+
+	/*----------  populating the first image  ----------*/
+	populateImage : function(){
+		var startingPic = document.createElement('img');
+		var imgSrc="images/"+theGame.names[theGame.status]+".jpg";
+		startingPic.setAttribute("src", imgSrc );
+		theGame.pic.appendChild(startingPic);
 	},
 
 	/*----------   populating the keyboard keys with random alphabets  ----------*/
@@ -146,7 +154,7 @@ var theGame = {
 		theGame.status=0; //todo: no need to set it at the first load
 
 		// populate the image
-		// theGame.populateImage();
+		theGame.populateImage();
 
 		// populating the keyboard
 		theGame.populateKeyBoard();
