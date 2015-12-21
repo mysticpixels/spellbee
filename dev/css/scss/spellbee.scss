@@ -1,10 +1,38 @@
-/*==============================================
-=            Interviewers kit rules            =
-==============================================*/
+/*================================
+=            Includes            =
+================================*/
+@import 'reset';
+
+/*======================================
+=            Reusable rules            =
+======================================*/
+
+// clearfix
+.group:after {
+	visibility: hidden;
+	display: block;
+	content: "";
+	clear: both;
+	height: 0;
+	}
+* html .group             { zoom: 1; } /* IE6 */
+*:first-child+html .group { zoom: 1; } /* IE7 */
+
+
+/*===================================================
+=            Core rules for spellbee            =
+===================================================*/
 body{
 	font-family: 'arial';
 	background: url(../../images/swirl_pattern.png) 0 0 repeat;
 }
+
+/*----------  core rules of spellbee  ----------*/
+#motherWrapper{
+	width: 800px;
+	margin: 30px auto;
+}
+
 dl{
 	dt, dd{
 		float: left;

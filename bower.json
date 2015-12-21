@@ -1,0 +1,23 @@
+{
+  "name": "spellbee",
+  "description": "A small little game to improve the vocabulary of little ones...",
+  "main": "index.js",
+  "authors": [
+    "mysticpixels@gmail.com"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/mysticpixels/spellbee",
+  "moduleType": [
+    "node"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "buttons.css": "buttons#~1.0.4"
+  }
+}
